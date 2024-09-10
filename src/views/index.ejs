@@ -6,12 +6,14 @@
     <title>PokeDex</title>
 </head>
 <body>
-    <h1>PokeDex Unicesumar</h1>
-    <% results.forEach(pokemon => { %>
-    <div>
-        <p>Nome: <%= pokemon.name %></p>
-        <p>URL: <%= pokemon.url %></p>
-    </div>
+    <h1>Pokedex Unicesumar</h1>
+    <input type="text" id="pegarPoke">
+    <button onclick="">Submit</button>
+
+    <hr>
+    <% results.forEach((pokemon, index) => { %>
+        <p>Pokemon: <%= pokemon.name %></p>
+        <p>ID: <%= index + 1 %></p>
     <% }) %>
 </body>
 </html>

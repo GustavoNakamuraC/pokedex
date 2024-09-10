@@ -6,16 +6,17 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, "/views"));
 
 app.get('/', function (request:Request, response: Response) {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=1025")
         .then(res => {
             return res.json();
         })
         .then(data => {
+            console.log(data);
             response.render("index", data);
         });
 });
 
 
-app.listen(3000, function () {
-    console.log("Server is running");
+app.listen(3001, function () {
+    console.log("http://localhost:3001/");
 })
