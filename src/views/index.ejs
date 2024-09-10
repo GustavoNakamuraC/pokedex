@@ -7,12 +7,10 @@
 </head>
 <body>
     <h1>Pokedex Unicesumar</h1>
-    <input type="text" id="pegarPoke">
-    <button onclick="">Submit</button>
 
     <hr>
     <% results.forEach((pokemon, index) => { %>
-        <p>Pokemon: <%= pokemon.name %></p>
+        <p>Pokemon: <a href="<%= pokemon.name %>/stats"><%= pokemon.name %></a></p>
         <p>ID: <%= index + 1 %></p>
     <% }) %>
 </body>
