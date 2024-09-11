@@ -18,13 +18,27 @@ app.get('/', function (request:Request, response: Response) {
         });
 });
 
-app.get("/:name/stats", function(request:Request, response:Response){
+app.get("/:id/:name/stats", function(request:Request, response:Response){
     const nomePokemon = request.params.name;
+    const pokeId = request.params.name;
+
     fetch(`https://pokeapi.co/api/v2/pokemon/${nomePokemon}`)
         .then(res => res.json())
         .then(pokemon => {
-            
-        })
+            const sprite1 = pokemon.sprites.front_default;
+            const sprite2 = pokemon.sprites.back_default;
+            response.render("stats", {
+                "frente": sprite1,
+                "tras": sprite2,
+                "nome": pokemon.name,
+                "id": pokemon.id,
+                "altura": pokemon.height,
+                "peso": pokemon.weight,
+                "habilidades": pokemon.abilities,
+                "tipos": pokemon.types
+            })
+        });
+
 })
 
 

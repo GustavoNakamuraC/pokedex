@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>PokeDex</title>
 </head>
 <body>
@@ -10,7 +11,7 @@
 
     <hr>
     <% results.forEach((pokemon, index) => { %>
-        <p>Pokemon: <a href="<%= pokemon.name %>/stats"><%= pokemon.name %></a></p>
+        <p>Pokemon: <a href="<%= index + 1 %>/<%= pokemon.name %>/stats"><%= pokemon.name %></a></p>
         <p>ID: <%= index + 1 %></p>
     <% }) %>
 </body>

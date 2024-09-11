@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Stats</title>
+
+    <style>
+        img{
+            width: 150px;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <h1><%= nome.toUpperCase() %> - N° <%= id %></h1>
+    <img src="<%= frente %>">
+    <img src="<%= tras %>">
+    <ul>
+        <li>Altura: <%= altura/10 %>m</li>
+        <li>Peso: <%= peso/10 %>kg</li>
+    </ul>
+
+    <h2>Tipos:</h2>
+    <ul>
+        <% tipos.forEach(tipo =>{ %>
+            <li><%= tipo.type.name %></li>
+        <% }) %>
+    </ul>
+
+    <h2>Habilidades: </h2>
+    <ul>
+        <% habilidades.forEach(habilidade =>{ %>
+            <li><%= habilidade.ability.name %></li>
+        <% }) %>
+    </ul>
+
 </body>
 </html>
